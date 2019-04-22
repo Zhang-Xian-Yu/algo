@@ -282,3 +282,24 @@ class SinglyLinkedList():
                 return True
 
         return False
+
+    def ring_entry_point(self):
+        """
+        使用指针地址计算环的入口 
+        """
+        if self.has_ring() is False:
+            return
+
+        addr = []
+        tmp = self.__head
+        while tmp.next is not None:
+            if id(tmp) in addr:
+                print(addr)
+                return tmp.data
+            else:
+                addr.append(id(tmp))
+                tmp = tmp.next
+
+    def insert_node_to_head(self, node):
+        node.next = self.__head
+        self.__head = node

@@ -1,5 +1,6 @@
 """
     check a single-linked list whether a palindrome
+    判断字符串是否是回文
 """
 
 import sys
